@@ -16,7 +16,7 @@
           </div>
         </div>
         <div class="do-chat">
-          <input type="text" class="in-text" v-model="mesSend.msg"  @keypress.enter="send()">
+          <input type="text" class="in-text" v-model="mesSend"  @keypress.enter="send()">
           <button class="btn-send" @click="send()" >Send</button>
         </div>
       </div>
@@ -34,9 +34,15 @@ export default {
     send()
     {
       let me = this;
-      me.listMes.push(me.mesSend)
+
+      let selfMes = {
+        msg: me.mesSend,
+        account: 0
+      };
+      me.listMes.push(selfMes);
     },
 
+    //hàm nhận tin nhắn, chưa rõ có chế nhận nên phải gọi mới được thực hiện, hiện tại chưa gọi
     receive()
     {
       let me = this;
@@ -45,8 +51,11 @@ export default {
 
 
       // dẩy tin nhắn
-      me.mesReceive.msg = mesSocket;
-      me.listMes.push(me.mesReceive);
+      let friendMes = {
+        msg: mesSocket,
+        account: 1
+      };
+      me.listMes.push(friendMes);
     },
 
     // hàm gọi len server xử lí room id
@@ -65,20 +74,13 @@ export default {
         // muốn thêm trường j vào cứ thêm vd (vietanh: true, long: false)
       },
 
-      mesReceive: 
-      {
-        msg: '',
-        account:1,
-      },
-      mesSend: 
-      {
-        msg: '',
-        account:0,
-      },
+      //biến tin nhắn nhận từ input
+      mesSend: '',
+
       // data fake
       listMes: [
         {
-          account: 0,
+          account: 0,// biến thể hiện là mình hay bạn gửi tin nhắn
           msg: 'helo minh',
         },
         {
