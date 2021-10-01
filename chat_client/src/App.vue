@@ -1,7 +1,12 @@
 <template>
   <div id="app">
-      <div></div>
+      <div class="room-box">
+        <div>Nhập id room:</div>
+        <div><input type="text" class="in-room" v-model="room.id"></div>
+        <div><button @click="subRoomID">Nhập</button></div>
+      </div>
       <div class="chat-box">
+        <span>Room: {{room.id}}</span>
         <div class="msg-box">
           <div v-for="(item, index) in listMes" 
           :key="index" 
@@ -42,6 +47,12 @@ export default {
       // dẩy tin nhắn
       me.mesReceive.msg = mesSocket;
       me.listMes.push(me.mesReceive);
+    },
+
+    // hàm gọi len server xử lí room id
+    subRoomID()
+    {
+      //biến gửi this.room.id;
     }
     
   },

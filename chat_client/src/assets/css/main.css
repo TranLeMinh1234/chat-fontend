@@ -23,7 +23,7 @@ body{
 
   .chat-box{
       width: 400px;
-      height: 300px;
+      height: 340px;
       background-color: white;
       border-radius: 6px;
   }
@@ -43,7 +43,7 @@ body{
 
   .do-chat
   {
-      height: 20%;
+      height: 15%;
       width: 90%;
       margin-left: 20px;
       margin-top: 10px;
@@ -83,4 +83,18 @@ body{
   .friend{
       background-color: #18191a;
       left: 5px;
+  }
+
+  .room-box
+  {
+      width: 100px;
+      height: 100px;
+      background-color: white;
+      border-radius: 6px;
+      margin-right: 10px;
+  }
+
+  .in-room
+  {
+      width: 90px;
   }
