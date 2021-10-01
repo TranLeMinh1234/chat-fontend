@@ -1,0 +1,86 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: black;
+  }
+  
+  * {
+      box-sizing: border-box;
+  }
+  
+  #app{
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../tree.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .chat-box{
+      width: 400px;
+      height: 300px;
+      background-color: white;
+      border-radius: 6px;
+  }
+  
+  .msg-box
+  {
+      height: 70%;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      width: 90%;
+      margin-top: 10px;
+      margin-left: 20px;
+      border-radius: 2px;
+      border: 1px solid black;
+      position: relative;
+  }
+
+  .do-chat
+  {
+      height: 20%;
+      width: 90%;
+      margin-left: 20px;
+      margin-top: 10px;
+      border-radius: 2px;
+      border: 1px solid black;
+  }
+
+  .in-text
+  {
+      height: 100%;
+      width: 80%;
+      border: 1px solid black;
+      
+  }
+
+  .btn-send
+  {
+      height: 100%;
+      width: 20%;
+  }
+
+  .msg
+  {
+      padding: 10px 10px 10px 10px;
+      max-width: 200px;
+      border-radius: 10px;
+      color: white;
+      margin-top: 10px;
+      position: relative;
+  }
+
+  .self{
+      background-color: #0099ff;
+      right: -145px;
+  }
+
+  .friend{
+      background-color: #18191a;
+      left: 5px;
+  }
